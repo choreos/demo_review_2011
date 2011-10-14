@@ -1,0 +1,24 @@
+2011-10-13 23:31:08,269 WARN  [SoapUI] Missing folder [/media/stuff/workspace/demo_2011/choreography_tests/./ext] for external libraries
+2011-10-13 23:31:08,459 INFO  [DefaultSoapUICore] initialized soapui-settings from [/home/besson/soapui-settings.xml]
+2011-10-13 23:31:09,293 INFO  [SchemaUtils] Added default schema from file:/home/besson/.m2/repository/eu/choreos/rehearsal/0.6/rehearsal-0.6.jar!/com/eviware/soapui/resources/xsds/xop.xsd with targetNamespace http://www.w3.org/2004/08/xop/include
+2011-10-13 23:31:09,342 INFO  [SchemaUtils] Added default schema from file:/home/besson/.m2/repository/eu/choreos/rehearsal/0.6/rehearsal-0.6.jar!/com/eviware/soapui/resources/xsds/XMLSchema.xsd with targetNamespace http://www.w3.org/2001/XMLSchema
+2011-10-13 23:31:09,344 INFO  [SchemaUtils] Added default schema from file:/home/besson/.m2/repository/eu/choreos/rehearsal/0.6/rehearsal-0.6.jar!/com/eviware/soapui/resources/xsds/xml.xsd with targetNamespace http://www.w3.org/XML/1998/namespace
+2011-10-13 23:31:09,345 INFO  [SchemaUtils] Added default schema from file:/home/besson/.m2/repository/eu/choreos/rehearsal/0.6/rehearsal-0.6.jar!/com/eviware/soapui/resources/xsds/swaref.xsd with targetNamespace http://ws-i.org/profiles/basic/1.1/xsd
+2011-10-13 23:31:09,346 INFO  [SchemaUtils] Added default schema from file:/home/besson/.m2/repository/eu/choreos/rehearsal/0.6/rehearsal-0.6.jar!/com/eviware/soapui/resources/xsds/xmime200505.xsd with targetNamespace http://www.w3.org/2005/05/xmlmime
+2011-10-13 23:31:09,347 INFO  [SchemaUtils] Added default schema from file:/home/besson/.m2/repository/eu/choreos/rehearsal/0.6/rehearsal-0.6.jar!/com/eviware/soapui/resources/xsds/xmime200411.xsd with targetNamespace http://www.w3.org/2004/11/xmlmime
+2011-10-13 23:31:09,349 INFO  [SchemaUtils] Added default schema from file:/home/besson/.m2/repository/eu/choreos/rehearsal/0.6/rehearsal-0.6.jar!/com/eviware/soapui/resources/xsds/soapEnvelope.xsd with targetNamespace http://schemas.xmlsoap.org/soap/envelope/
+2011-10-13 23:31:09,355 INFO  [SchemaUtils] Added default schema from file:/home/besson/.m2/repository/eu/choreos/rehearsal/0.6/rehearsal-0.6.jar!/com/eviware/soapui/resources/xsds/soapEncoding.xsd with targetNamespace http://schemas.xmlsoap.org/soap/encoding/
+2011-10-13 23:31:09,358 INFO  [SchemaUtils] Added default schema from file:/home/besson/.m2/repository/eu/choreos/rehearsal/0.6/rehearsal-0.6.jar!/com/eviware/soapui/resources/xsds/soapEnvelope12.xsd with targetNamespace http://www.w3.org/2003/05/soap-envelope
+2011-10-13 23:31:09,365 INFO  [SchemaUtils] Added default schema from file:/home/besson/.m2/repository/eu/choreos/rehearsal/0.6/rehearsal-0.6.jar!/com/eviware/soapui/resources/xsds/soapEncoding12.xsd with targetNamespace http://www.w3.org/2003/05/soap-encoding
+2011-10-13 23:31:09,565 INFO  [SchemaUtils] Loading schema types from [http://localhost:1234/SimpleStore?wsdl]
+2011-10-13 23:31:09,565 INFO  [SchemaUtils] Getting schema http://localhost:1234/SimpleStore?wsdl
+2011-10-13 23:31:09,573 INFO  [SchemaUtils] Getting schema http://localhost:1234/SimpleStore?xsd=1
+2011-10-13 23:31:09,917 INFO  [WsdlImporter] Finding importer for {http://simplestorews.vvws.choreos.eu/}SimpleStoreWSPortBinding
+2011-10-13 23:31:09,923 INFO  [WsdlImporter] Importing binding {http://simplestorews.vvws.choreos.eu/}SimpleStoreWSPortBinding
+2011-10-13 23:31:09,945 INFO  [Soap11HttpBindingImporter] importing endpoint http://localhost:1234/SimpleStore
+2011-10-13 23:31:09,981 INFO  [Soap11HttpBindingImporter] importing operation cancelPurchase
+2011-10-13 23:31:09,996 INFO  [Soap11HttpBindingImporter] importing operation purchase
+2011-10-13 23:31:09,998 INFO  [Soap11HttpBindingImporter] importing operation searchByArtist
+2011-10-13 23:31:09,999 INFO  [Soap11HttpBindingImporter] importing operation searchByGenre
+2011-10-13 23:31:09,999 INFO  [Soap11HttpBindingImporter] importing operation searchByTitle
+2011-10-13 23:31:10,000 INFO  [Soap11HttpBindingImporter] importing operation sendPurchaseFeedback
