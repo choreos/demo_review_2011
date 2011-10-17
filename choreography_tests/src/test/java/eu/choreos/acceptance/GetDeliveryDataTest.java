@@ -1,7 +1,7 @@
-package eu.choreos.choreography;
+package eu.choreos.acceptance;
 
-import static eu.choreos.choreography.AcceptanceTestUtils.*;
-import static eu.choreos.choreography.ManualEnactment.futureMarket;
+import static eu.choreos.utils.AcceptanceTestUtils.*;
+import static eu.choreos.utils.ManualEnactment.futureMarket;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.AfterClass;

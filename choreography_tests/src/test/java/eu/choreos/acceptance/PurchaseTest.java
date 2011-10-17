@@ -1,10 +1,12 @@
-package eu.choreos.choreography;
+package eu.choreos.acceptance;
 
-import static eu.choreos.choreography.AcceptanceTestUtils.*;
-import static eu.choreos.choreography.ManualEnactment.getChoreography;
+import static eu.choreos.utils.AcceptanceTestUtils.formatEndpoint;
+import static eu.choreos.utils.AcceptanceTestUtils.getPersonalData;
+import static eu.choreos.utils.AcceptanceTestUtils.registerSupermarkets;
+import static eu.choreos.utils.AcceptanceTestUtils.requestIdOfSimpleOrder;
+import static eu.choreos.utils.ManualEnactment.getChoreography;
 import static org.junit.Assert.assertEquals;
 
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -33,11 +35,6 @@ public class PurchaseTest {
 		
 	}
 	
-	@AfterClass
-	public static void removeSupermarketsFromRegistry() throws Exception {
-		Service smregistry = customer.getServicesForRole("customer").get(0);
-		removeSupermarkets(smregistry);
-	}
 
 	@Test
 	public void shouldReturnTheShipperEndpointWhenProductsIsPurchased()

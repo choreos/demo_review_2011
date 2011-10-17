@@ -1,7 +1,5 @@
-package eu.choreos.choreography;
+package eu.choreos.acceptance;
 
-import static eu.choreos.choreography.AcceptanceTestUtils.registerSupermarkets;
-import static eu.choreos.choreography.AcceptanceTestUtils.removeSupermarkets;
 import static org.junit.Assert.fail;
 
 import java.util.List;
@@ -15,7 +13,9 @@ import eu.choreos.vv.abstractor.Choreography;
 import eu.choreos.vv.abstractor.Service;
 import eu.choreos.vv.clientgenerator.Item;
 import eu.choreos.vv.clientgenerator.WSClient;
-import static eu.choreos.choreography.ManualEnactment.getChoreography;;
+import static eu.choreos.utils.AcceptanceTestUtils.registerSupermarkets;
+import static eu.choreos.utils.AcceptanceTestUtils.removeSupermarkets;
+import static eu.choreos.utils.ManualEnactment.getChoreography;
 
 public class RegisterSupermarketTest {
 	private Service smregistry;

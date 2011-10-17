@@ -1,0 +1,17 @@
+project
+--------------------------------------------------------------
+tests packages:
+
+- acceptance: acceptance tests for each choregraphy feature
+- compliance: compliance tests for each supermarket participant
+- utis: manual enactment and other administrative tasks
+
+execution
+---------------------------------------------------------------
+Maven: 
+- run all tests: mvn test
+- run compliance tests: mvn -Dtest=eu.choreos.compliance.* test 
+- run acceptance tests: mvn -Dtest=eu.choreos.acceptance.* test
+
+Eclipse: 
+- run using JUnit but after please remove the lib javaee-api-6.0.jar from the referenced libraries (if it is present) 

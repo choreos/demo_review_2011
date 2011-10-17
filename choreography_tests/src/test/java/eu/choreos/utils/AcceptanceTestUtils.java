@@ -1,6 +1,6 @@
-package eu.choreos.choreography;
+package eu.choreos.utils;
 
-import static eu.choreos.choreography.ManualEnactment.getChoreography;
+import static eu.choreos.utils.ManualEnactment.getChoreography;
 
 import java.util.List;
 

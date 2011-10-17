@@ -1,7 +1,7 @@
-package eu.choreos.choreography;
+package eu.choreos.utils;
 
 import eu.choreos.vv.abstractor.Choreography;
-import static eu.choreos.choreography.AcceptanceTestUtils.PREFIX;
+import static eu.choreos.utils.AcceptanceTestUtils.PREFIX;
 import eu.choreos.vv.abstractor.Role;
 import eu.choreos.vv.abstractor.Service;
 
@@ -25,7 +25,7 @@ public class ManualEnactment {
 		// Creating Services
 		// ------------------------------------------------------------------------------------------------------------------------------------------
 		Service registry = new Service();
-		registry.setWSDL("http://localhost:1234/smregistry?wsdl");
+		registry.setWSDL(PREFIX + "smregistry?wsdl");
 		
 		Service supermarket1 = new Service();
 		supermarket1.setWSDL(PREFIX + "supermarket1?wsdl");

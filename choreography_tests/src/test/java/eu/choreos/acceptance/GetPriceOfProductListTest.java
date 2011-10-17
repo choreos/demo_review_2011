@@ -1,9 +1,9 @@
-package eu.choreos.choreography;
+package eu.choreos.acceptance;
 
-import static eu.choreos.choreography.AcceptanceTestUtils.formatEndpoint;
-import static eu.choreos.choreography.AcceptanceTestUtils.registerSupermarkets;
-import static eu.choreos.choreography.AcceptanceTestUtils.removeSupermarkets;
-import static eu.choreos.choreography.ManualEnactment.getChoreography;
+import static eu.choreos.utils.AcceptanceTestUtils.formatEndpoint;
+import static eu.choreos.utils.AcceptanceTestUtils.registerSupermarkets;
+import static eu.choreos.utils.AcceptanceTestUtils.removeSupermarkets;
+import static eu.choreos.utils.ManualEnactment.getChoreography;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.AfterClass;
