@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:definitions xmlns:w="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns10="http://petals.ow2.org/wsdlExtensions" xmlns:ns11="http://com.ebmwebsourcing.easybpel/ExtendedActivityConfiguration" xmlns:ns12="ns12" xmlns:ns13="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:ns14="ns26" xmlns:ns16="http://docs.oasis-open.org/wsbpel/2.0/serviceref" xmlns:ns16_="ns9" xmlns:ns17="ns11" xmlns:ns18="tns" xmlns:ns19="ns39" xmlns:ns20="ns22" xmlns:ns21="plnk" xmlns:ns22="xml" xmlns:ns24="ns8" xmlns:ns25="soap12" xmlns:ns26="ns21" xmlns:ns27="ns25" xmlns:ns28="http" xmlns:ns29="ns14" xmlns:ns30="ns16" xmlns:ns31="ns34" xmlns:ns32="p" xmlns:ns33="soap" xmlns:ns34="ns17" xmlns:ns35="mime" xmlns:ns35_="ns31" xmlns:ns36="w" xmlns:ns36_="ns18" xmlns:ns37="ns13" xmlns:ns37_="ns16_" xmlns:ns38="http://docs.oasis-open.org/wsbpel/2.0/process/abstract" xmlns:ns39="ns20" xmlns:ns40="ns10" xmlns:ns43="ns37" xmlns:ns44="ns27" xmlns:ns45="ns7" xmlns:ns46="ns19" xmlns:ns47="ns24" xmlns:ns48="ns36" xmlns:ns51="ns28" xmlns:ns52="ns32" xmlns:ns53="ns38" xmlns:ns55="ns33" xmlns:ns56="ns35" xmlns:ns7="http://www.w3.org/ns/wsdl" xmlns:ns8="http://www.w3.org/ns/wsdl/http" xmlns:ns9="http://www.w3.org/ns/wsdl/soap" xmlns:p="http://www.w3.org/2001/XMLSchema" xmlns:petals="http://petals.ow2.org/bpel/supermarket/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://petals.ow2.org/bpel/supermarket/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="supermarketDefinition" targetNamespace="http://petals.ow2.org/bpel/supermarket/">
+  <w:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://petals.ow2.org/bpel/supermarket/">
+      <xs:element name="supermarketRequest" type="tns:supermarketRequest"/>
+      <xs:complexType name="supermarketRequest">
+        <xs:sequence>
+          <xs:element name="input" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="supermarketResponse" type="tns:supermarketResponse"/>
+      <xs:complexType name="supermarketResponse">
+        <xs:sequence>
+          <xs:element name="result" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="searchForProduct" type="tns:searchForProduct"/>
+      <xs:element name="searchForProductResponse" type="tns:searchForProductResponse"/>
+      <xs:complexType name="searchForProduct">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="searchForProductResponse">
+        <xs:sequence>
+          <xs:element name="return" type="tns:returnType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="returnType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="registerSupermarket">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="registerSupermarketResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="purchase">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="data" type="tns:personalDataType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="purchaseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="confirmation" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="personalDataType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="address" type="xs:string"/>
+          <xs:element name="zipcode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </w:types>
+  <w:message name="supermarketRequestMessage">
+    <w:part element="tns:searchForProduct" name="payload"/>
+  </w:message>
+  <w:message name="supermarketResponseMessage">
+    <w:part element="tns:searchForProductResponse" name="payload"/>
+  </w:message>
+  <w:message name="registerSupermarketRequest">
+    <w:part element="tns:registerSupermarket" name="parameters"/>
+  </w:message>
+  <w:message name="registerSupermarketResponse">
+    <w:part element="tns:registerSupermarketResponse" name="parameters"/>
+  </w:message>
+  <w:message name="purchaseRequest">
+    <w:part element="tns:purchase" name="parameters"/>
+  </w:message>
+  <w:message name="purchaseResponse">
+    <w:part element="tns:purchaseResponse" name="parameters"/>
+  </w:message>
+  <w:portType name="supermarket1PortType">
+    <w:operation name="searchForProduct">
+      <w:input message="tns:supermarketRequestMessage" name="productIn"/>
+      <w:output message="tns:supermarketResponseMessage" name="productOut"/>
+    </w:operation>
+    <w:operation name="registerSupermarket">
+      <w:input message="tns:registerSupermarketRequest" name="registerIn"/>
+      <w:output message="tns:registerSupermarketResponse" name="registerOut"/>
+    </w:operation>
+    <w:operation name="purchase">
+      <w:input message="tns:purchaseRequest" name="purIn"/>
+      <w:output message="tns:purchaseResponse" name="putOut"/>
+    </w:operation>
+  </w:portType>
+  <w:binding name="supermarket1Binding" type="tns:supermarket1PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <w:operation name="searchForProduct">
+      <soap:operation soapAction="http://petals.ow2.org/bpel/supermarket/searchForProduct"/>
+      <w:input name="productIn">
+        <soap:body use="literal"/>
+      </w:input>
+      <w:output name="productOut">
+        <soap:body use="literal"/>
+      </w:output>
+    </w:operation>
+    <w:operation name="registerSupermarket">
+      <soap:operation soapAction="http://petals.ow2.org/bpel/supermarket/registerSupermarket"/>
+      <w:input name="registerIn">
+        <soap:body use="literal"/>
+      </w:input>
+      <w:output name="registerOut">
+        <soap:body use="literal"/>
+      </w:output>
+    </w:operation>
+    <w:operation name="purchase">
+      <soap:operation soapAction="http://petals.ow2.org/bpel/supermarket/purchase"/>
+      <w:input name="purIn">
+        <soap:body use="literal"/>
+      </w:input>
+      <w:output name="putOut">
+        <soap:body use="literal"/>
+      </w:output>
+    </w:operation>
+  </w:binding>
+  <w:service name="supermarket1Service">
+    <w:port binding="tns:supermarket1Binding" name="supermarketEndpoint">
+      <soap:address location="http://192.168.1.100:8084/petals/services/supermarket1"/>
+    </w:port>
+  </w:service>
+</w:definitions>

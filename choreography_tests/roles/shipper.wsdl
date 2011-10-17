@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:definitions xmlns:w="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns10="http://petals.ow2.org/wsdlExtensions" xmlns:ns11="http://com.ebmwebsourcing.easybpel/ExtendedActivityConfiguration" xmlns:ns12="ns12" xmlns:ns13="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:ns14="ns28" xmlns:ns16="http://docs.oasis-open.org/wsbpel/2.0/serviceref" xmlns:ns16_="ns9" xmlns:ns17="p" xmlns:ns18="soap" xmlns:ns19="ns24" xmlns:ns19_="ns11" xmlns:ns21="ns10" xmlns:ns22="ns22" xmlns:ns23="xml" xmlns:ns24="plnk" xmlns:ns25="ns27" xmlns:ns26="ns8" xmlns:ns26_="ns14" xmlns:ns27="soap12" xmlns:ns27_="ns16" xmlns:ns28="ns21" xmlns:ns28_="ns34" xmlns:ns29="ns7" xmlns:ns30="http" xmlns:ns31="ns19" xmlns:ns32="tns" xmlns:ns34="ns17" xmlns:ns34_="ns39" xmlns:ns35="mime" xmlns:ns36="w" xmlns:ns36_="ns31" xmlns:ns37="ns13" xmlns:ns38="ns16_" xmlns:ns39="ns18" xmlns:ns42="ns23" xmlns:ns45="ns37" xmlns:ns46="ns29" xmlns:ns48="ns26" xmlns:ns49="ns19_" xmlns:ns50="ns36" xmlns:ns52="ns30" xmlns:ns54="ns38" xmlns:ns55="http://docs.oasis-open.org/wsbpel/2.0/process/abstract" xmlns:ns56="ns35" xmlns:ns7="http://www.w3.org/ns/wsdl" xmlns:ns8="http://www.w3.org/ns/wsdl/http" xmlns:ns9="http://www.w3.org/ns/wsdl/soap" xmlns:p="http://www.w3.org/2001/XMLSchema" xmlns:petals="http://petals.ow2.org/bpel/Shipper1/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://petals.ow2.org/bpel/Shipper1/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="Shipper1Definition" targetNamespace="http://petals.ow2.org/bpel/Shipper1/">
+  <w:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://petals.ow2.org/bpel/Shipper1/">
+      <xs:element name="Shipper1Request" type="tns:Shipper1Request"/>
+      <xs:complexType name="Shipper1Request">
+        <xs:sequence>
+          <xs:element name="input" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Shipper1Response" type="tns:Shipper1Response"/>
+      <xs:complexType name="Shipper1Response">
+        <xs:sequence>
+          <xs:element name="result" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="setDeliveryData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="personalData" type="tns:personalDataType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setDeliveryDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="confirmation" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="personalDataType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="address" type="xs:string"/>
+          <xs:element name="zipcode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </w:types>
+  <w:message name="Shipper1RequestMessage">
+    <w:part element="tns:Shipper1Request" name="payload"/>
+  </w:message>
+  <w:message name="Shipper1ResponseMessage">
+    <w:part element="tns:Shipper1Response" name="payload"/>
+  </w:message>
+  <w:message name="setDeliveryDataRequest">
+    <w:part element="tns:setDeliveryData" name="parameters"/>
+  </w:message>
+  <w:message name="setDeliveryDataResponse">
+    <w:part element="tns:setDeliveryDataResponse" name="parameters"/>
+  </w:message>
+  <w:portType name="Shipper1PortType">
+    <w:operation name="getDeliveryData">
+      <w:input message="tns:Shipper1RequestMessage" name="processInput"/>
+      <w:output message="tns:Shipper1ResponseMessage" name="processOutput"/>
+    </w:operation>
+    <w:operation name="setDeliveryData">
+      <w:input message="tns:setDeliveryDataRequest" name="setIn"/>
+      <w:output message="tns:setDeliveryDataResponse" name="setOut"/>
+    </w:operation>
+  </w:portType>
+  <w:binding name="Shipper1Binding" type="tns:Shipper1PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <w:operation name="getDeliveryData">
+      <soap:operation soapAction="http://petals.ow2.org/bpel/Shipper1/getDeliveryData"/>
+      <w:input name="processInput">
+        <soap:body use="literal"/>
+      </w:input>
+      <w:output name="processOutput">
+        <soap:body use="literal"/>
+      </w:output>
+    </w:operation>
+    <w:operation name="setDeliveryData">
+      <soap:operation soapAction="http://petals.ow2.org/bpel/Shipper1/setDeliveryData"/>
+      <w:input name="setIn">
+        <soap:body use="literal"/>
+      </w:input>
+      <w:output name="setOut">
+        <soap:body use="literal"/>
+      </w:output>
+    </w:operation>
+  </w:binding>
+  <w:service name="Shipper1Service">
+    <w:port binding="tns:Shipper1Binding" name="Shipper1Endpoint">
+      <soap:address location="http://192.168.1.100:8084/petals/services/shipper1"/>
+    </w:port>
+  </w:service>
+</w:definitions>

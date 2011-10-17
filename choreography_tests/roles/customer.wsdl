@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:definitions xmlns:w="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns10="http://petals.ow2.org/wsdlExtensions" xmlns:ns11="http://com.ebmwebsourcing.easybpel/ExtendedActivityConfiguration" xmlns:ns12="ns12" xmlns:ns13="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:ns14="ns28" xmlns:ns16="http://docs.oasis-open.org/wsbpel/2.0/serviceref" xmlns:ns16_="ns9" xmlns:ns17="ns11" xmlns:ns19="ns39" xmlns:ns20="ns22" xmlns:ns21="plnk" xmlns:ns22="xml" xmlns:ns24="ns8" xmlns:ns25="tns" xmlns:ns27="soap12" xmlns:ns27_="ns27" xmlns:ns28="ns21" xmlns:ns29="ns14" xmlns:ns30="ns16" xmlns:ns31="ns31" xmlns:ns32="ns17" xmlns:ns33="soap" xmlns:ns34="ns19" xmlns:ns35="mime" xmlns:ns35_="ns34" xmlns:ns36="w" xmlns:ns37="ns13" xmlns:ns37_="ns16_" xmlns:ns38="http://docs.oasis-open.org/wsbpel/2.0/process/abstract" xmlns:ns39="ns20" xmlns:ns40="ns10" xmlns:ns43="ns37" xmlns:ns44="ns29" xmlns:ns45="ns7" xmlns:ns46="ns24" xmlns:ns47="ns36" xmlns:ns48="http" xmlns:ns49="ns30" xmlns:ns50="p" xmlns:ns51="ns25" xmlns:ns52="ns32" xmlns:ns53="ns38" xmlns:ns55="ns33" xmlns:ns56="ns35" xmlns:ns7="http://www.w3.org/ns/wsdl" xmlns:ns8="http://www.w3.org/ns/wsdl/http" xmlns:ns9="http://www.w3.org/ns/wsdl/soap" xmlns:p="http://www.w3.org/2001/XMLSchema" xmlns:petals="http://petals.ow2.org/bpel/Customer/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://petals.ow2.org/bpel/Customer/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="CustomerDefinition" targetNamespace="http://petals.ow2.org/bpel/Customer/">
+  <w:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://petals.ow2.org/bpel/Customer/">
+      <xs:element name="CustomerRequest" type="tns:CustomerRequest"/>
+      <xs:complexType name="CustomerRequest">
+        <xs:sequence>
+          <xs:element name="input" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CustomerResponse" type="tns:CustomerResponse"/>
+      <xs:complexType name="CustomerResponse">
+        <xs:sequence>
+          <xs:element name="result" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getPriceOfProductListRequest" type="tns:getPriceOfProductListRequest"/>
+      <xs:element name="getPriceOfProductListResponse" type="tns:getPriceOfProductListResponse"/>
+      <xs:complexType name="getPriceOfProductListRequest">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="1" name="item" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPriceOfProductListResponse">
+        <xs:sequence>
+          <xs:element name="order" type="tns:orderType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="orderType">
+        <xs:sequence>
+          <xs:element name="id" type="xs:int"/>
+          <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="purchase">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="account" type="tns:accountType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="purchaseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="accountType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="address" type="xs:string"/>
+          <xs:element name="zipcode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getDeliveryData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="shipper" type="xs:string"/>
+            <xs:element name="orderID" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDeliveryDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="delivery" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </w:types>
+  <w:message name="CustomerRequestMessage">
+    <w:part element="tns:getPriceOfProductListRequest" name="payload"/>
+  </w:message>
+  <w:message name="CustomerResponseMessage">
+    <w:part element="tns:getPriceOfProductListResponse" name="payload"/>
+  </w:message>
+  <w:message name="purchaseRequest">
+    <w:part element="tns:purchase" name="parameters"/>
+  </w:message>
+  <w:message name="purchaseResponse">
+    <w:part element="tns:purchaseResponse" name="parameters"/>
+  </w:message>
+  <w:message name="getDeliveryDataRequest">
+    <w:part element="tns:getDeliveryData" name="parameters"/>
+  </w:message>
+  <w:message name="getDeliveryDataResponse">
+    <w:part element="tns:getDeliveryDataResponse" name="parameters"/>
+  </w:message>
+  <w:portType name="CustomerPortType">
+    <w:operation name="getPriceOfProductList">
+      <w:input message="tns:CustomerRequestMessage" name="listIn"/>
+      <w:output message="tns:CustomerResponseMessage" name="listOut"/>
+    </w:operation>
+    <w:operation name="purchase">
+      <w:input message="tns:purchaseRequest" name="purIn"/>
+      <w:output message="tns:purchaseResponse" name="purOut"/>
+    </w:operation>
+    <w:operation name="getDeliveryData">
+      <w:input message="tns:getDeliveryDataRequest" name="getIn"/>
+      <w:output message="tns:getDeliveryDataResponse" name="getOut"/>
+    </w:operation>
+  </w:portType>
+  <w:binding name="CustomerBinding" type="tns:CustomerPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <w:operation name="getPriceOfProductList">
+      <soap:operation soapAction="http://petals.ow2.org/bpel/Customer/getPriceOfProductList"/>
+      <w:input name="listIn">
+        <soap:body use="literal"/>
+      </w:input>
+      <w:output name="listOut">
+        <soap:body use="literal"/>
+      </w:output>
+    </w:operation>
+    <w:operation name="purchase">
+      <soap:operation soapAction="http://petals.ow2.org/bpel/Customer/purchase"/>
+      <w:input name="purIn">
+        <soap:body use="literal"/>
+      </w:input>
+      <w:output name="purOut">
+        <soap:body use="literal"/>
+      </w:output>
+    </w:operation>
+    <w:operation name="getDeliveryData">
+      <soap:operation soapAction="http://petals.ow2.org/bpel/Customer/getDeliveryData"/>
+      <w:input name="getIn">
+        <soap:body use="literal"/>
+      </w:input>
+      <w:output name="getOut">
+        <soap:body use="literal"/>
+      </w:output>
+    </w:operation>
+  </w:binding>
+  <w:service name="CustomerService">
+    <w:port binding="tns:CustomerBinding" name="CustomerEndpoint">
+      <soap:address location="http://192.168.1.100:8084/petals/services/customer"/>
+    </w:port>
+  </w:service>
+</w:definitions>
