@@ -1,3 +1,9 @@
+configuration
+--------------------------------------------------------------
+in the class eu.choreos.utils.AcceptanceUtils, the variable 
+IP must be filled with the machine IP where the customer service
+is deployed
+
 project
 --------------------------------------------------------------
 tests packages:
