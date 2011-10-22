@@ -28,7 +28,7 @@ public class GetPriceOfProductListTest {
 		 futureMarket = getChoreography();
 		registerSupermarkets();
 		customer = futureMarket.getServicesForRole("customer").get(0);
-		customerClient = new WSClient(customer.getWSDL());
+		customerClient = customer.getWSClient();
 		customerClient.setEndpoint(formatEndpoint(customer.getWSDL()));
 	}
 

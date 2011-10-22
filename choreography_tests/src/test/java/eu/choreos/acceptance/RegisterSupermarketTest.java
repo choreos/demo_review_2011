@@ -40,7 +40,7 @@ public class RegisterSupermarketTest {
 	@Test
 	public void shouldRegistrySupermarkets() throws Exception {
 		registerSupermarkets();
-		WSClient smRegistryClient = new WSClient(smregistry.getWSDL());
+		WSClient smRegistryClient = smregistry.getWSClient();
 		smRegistryClient.setEndpoint(smregistry.getWSDL());
 		
 		Item response = smRegistryClient.request("getList", (Item) null);

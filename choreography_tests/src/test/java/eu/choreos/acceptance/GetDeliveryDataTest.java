@@ -46,7 +46,7 @@ public class GetDeliveryDataTest {
 		id.setContent(purchaseID);
 		request.addChild(id);
 		
-		WSClient customerClient = new WSClient(customer.getWSDL());
+		WSClient customerClient = customer.getWSClient();
 		customerClient.setEndpoint(formatEndpoint(customer.getWSDL()));
 		Item response = customerClient.request("getDeliveryData", request);
 		
