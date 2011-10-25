@@ -1,4 +1,4 @@
-package eu.choreos.acceptance;
+package eu.choreos.acceptance.features;
 
 import static org.junit.Assert.fail;
 
