@@ -1,4 +1,4 @@
-package eu.choreos.acceptance;
+package eu.choreos.acceptance.features;
 
 import static eu.choreos.utils.AcceptanceTestUtils.formatEndpoint;
 import static eu.choreos.utils.AcceptanceTestUtils.getPersonalData;

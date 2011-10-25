@@ -1,4 +1,4 @@
-package eu.choreos.acceptance;
+package eu.choreos.acceptance.features;
 
 import static eu.choreos.utils.AcceptanceTestUtils.formatEndpoint;
 import static eu.choreos.utils.AcceptanceTestUtils.registerSupermarkets;
@@ -25,7 +25,7 @@ public class GetPriceOfProductListTest {
 	
 	@BeforeClass
 	public static void setUpSupermarketsAndCustomerWSClient() throws Exception {
-		 futureMarket = getChoreography();
+		futureMarket = getChoreography();
 		registerSupermarkets();
 		customer = futureMarket.getServicesForRole("customer").get(0);
 		customerClient = customer.getWSClient();

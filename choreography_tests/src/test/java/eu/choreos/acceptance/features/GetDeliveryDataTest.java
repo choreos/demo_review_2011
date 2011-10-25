@@ -1,4 +1,4 @@
-package eu.choreos.acceptance;
+package eu.choreos.acceptance.features;
 
 import static eu.choreos.utils.AcceptanceTestUtils.formatEndpoint;
 import static eu.choreos.utils.AcceptanceTestUtils.purchaseProduct;
@@ -7,6 +7,10 @@ import static eu.choreos.utils.AcceptanceTestUtils.removeSupermarkets;
 import static eu.choreos.utils.AcceptanceTestUtils.requestIdOfSimpleOrder;
 import static eu.choreos.utils.ManualEnactment.futureMarket;
 import static org.junit.Assert.assertTrue;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -18,7 +22,7 @@ import eu.choreos.vv.clientgenerator.ItemImpl;
 import eu.choreos.vv.clientgenerator.WSClient;
 
 public class GetDeliveryDataTest {
-	
+	private static DateFormat dtf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
 	private static String purchaseID;
 	private static String shipperName;
 	private static Service customer;
