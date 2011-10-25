@@ -27,7 +27,7 @@ public class SupermarketComplianceTest {
 	public void servicesMustBeCompliantWithTheSupermarketRole() throws Exception {
 		List<Service> supermarkets = futureMarket.getServicesForRole("supermarket");
 		for (Service service : supermarkets)
-			assertRole(supermarket, service,  SMRole.class); 
+			assertRole(supermarket, service,  SMRoleTest.class); 
         }
 
 

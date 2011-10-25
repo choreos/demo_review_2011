@@ -16,12 +16,12 @@ import eu.choreos.vv.abstractor.Service;
 import eu.choreos.vv.clientgenerator.Item;
 import eu.choreos.vv.clientgenerator.WSClient;
 
-public class SMRole extends ComplianceTestCase{
+public class SMRoleTest extends ComplianceTestCase{
 	
 	 String endpoint;
 	private static WSClient smClient;
 	
-	public SMRole(String endpoint) {
+	public SMRoleTest(String endpoint) {
 		super(endpoint);
 		this.endpoint = endpoint;
 	}

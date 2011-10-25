@@ -12,8 +12,8 @@ import eu.choreos.vv.clientgenerator.WSClient;
 
 public class AcceptanceTestUtils {
 
-	final static private String IP = "choreos.ime.usp.br";
-	final static public String PREFIX = "http://" + IP + ":53124/petals/services/";
+	final static private String IP = "localhost";
+	final static public String PREFIX = "http://" + IP + ":8084/petals/services/";
 	
 	private static Choreography futureMarket = getChoreography();
 	private static List<Service> supermarkets = futureMarket.getServicesForRole("supermarket");
@@ -22,8 +22,7 @@ public class AcceptanceTestUtils {
 	// ------------------------------------------------------------------------------------------------------------------------------------------
 	public static void removeSupermarkets(Service smregistry) throws Exception {
 		WSClient smregistryClient = new WSClient(smregistry.getWSDL());
-		smregistryClient.setEndpoint(formatEndpoint(smregistry.getWSDL()));
-
+		
 		for (Service service : supermarkets) 
 			smregistryClient.request("removeSupermarket", service.getWSDL());
 	}

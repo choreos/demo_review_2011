@@ -32,6 +32,7 @@ public class GetPriceOfProductListTest {
 		customerClient.setEndpoint(formatEndpoint(customer.getWSDL()));
 	}
 
+	
 	@AfterClass
 	public static void removeRegisteredSupermarkets() throws Exception {
 		Service smregistry = customer.getServicesForRole("customer").get(0);

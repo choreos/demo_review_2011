@@ -1,8 +1,12 @@
 package eu.choreos.acceptance;
 
-import static eu.choreos.utils.AcceptanceTestUtils.*;
+import static eu.choreos.utils.AcceptanceTestUtils.formatEndpoint;
+import static eu.choreos.utils.AcceptanceTestUtils.purchaseProduct;
+import static eu.choreos.utils.AcceptanceTestUtils.registerSupermarkets;
+import static eu.choreos.utils.AcceptanceTestUtils.removeSupermarkets;
+import static eu.choreos.utils.AcceptanceTestUtils.requestIdOfSimpleOrder;
 import static eu.choreos.utils.ManualEnactment.futureMarket;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -50,7 +54,7 @@ public class GetDeliveryDataTest {
 		customerClient.setEndpoint(formatEndpoint(customer.getWSDL()));
 		Item response = customerClient.request("getDeliveryData", request);
 		
-		assertEquals("Sat Dec 24 20:15:00 BRST 2011", response.getChild("delivery").getContent());
+		assertTrue(response.getChild("delivery").getContent().contains("Sat Dec 24 20:15:00"));
 	}
 
 }
