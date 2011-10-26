@@ -28,14 +28,13 @@ public class AcceptanceTestUtils {
 			smregistryClient.request("removeSupermarket", service.getWSDL());
 	}
 
-	public static void registerSupermarkets() throws Exception {
+	public static void registerSupermarkets(Service smregistry) throws Exception {
+		WSClient smregistryClient = new WSClient(smregistry.getWSDL());
+		smregistryClient.setEndpoint(formatEndpoint(smregistry.getWSDL()));
 		
-		for (Service service : supermarkets) {
-			String wsdl = service.getWSDL();
-			WSClient serviceClient = new WSClient(wsdl);
-			serviceClient.setEndpoint(formatEndpoint(wsdl));
-			serviceClient.request("registerSupermarket", wsdl);
-		}
+		for (Service service : supermarkets) 
+			smregistryClient.request("addSupermarket", service.getWSDL());
+		
 	}
 
 	public static String requestIdOfSimpleOrder(Service customer) throws Exception {

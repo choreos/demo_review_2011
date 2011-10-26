@@ -39,7 +39,7 @@ public class RegisterSupermarketTest {
 
 	@Test
 	public void shouldRegistrySupermarkets() throws Exception {
-		registerSupermarkets();
+		registerSupermarkets(smregistry);
 		WSClient smRegistryClient = smregistry.getWSClient();
 		smRegistryClient.setEndpoint(smregistry.getWSDL());
 		

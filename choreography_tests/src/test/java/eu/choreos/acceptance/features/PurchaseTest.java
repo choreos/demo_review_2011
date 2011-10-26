@@ -27,8 +27,9 @@ public class PurchaseTest {
 	public static void setUpSupermarketsAndCustomerWSClientAndRequestProductList()
 			throws Exception {
 		 futureMarket = getChoreography();
-		registerSupermarkets();		
-		customer = futureMarket.getServicesForRole("customer").get(0);
+		 customer = futureMarket.getServicesForRole("customer").get(0);
+		Service smregistry = customer.getServicesForRole("customer").get(0);
+		registerSupermarkets(smregistry);		
 		customerClient = customer.getWSClient();
 		customerClient.setEndpoint(formatEndpoint(customer.getWSDL()));
 		purchaseID = requestIdOfSimpleOrder(customer);

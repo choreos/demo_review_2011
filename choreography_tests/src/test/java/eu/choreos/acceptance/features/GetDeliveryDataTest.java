@@ -30,11 +30,12 @@ public class GetDeliveryDataTest {
 	@BeforeClass
 	public static void setUpSupermarketsAndCustomerWSClientAndPurchaseProduct()
 			throws Exception {
-		registerSupermarkets();
 		customer = futureMarket.getServicesForRole("customer").get(0);
 		
 		purchaseID = requestIdOfSimpleOrder(customer);
 		shipperName = purchaseProduct(customer, purchaseID);
+		Service smregistry = customer.getServicesForRole("customer").get(0);
+		registerSupermarkets(smregistry);
 	}
 	
 	@AfterClass

@@ -26,7 +26,8 @@ public class GetPriceOfProductListTest {
 	@BeforeClass
 	public static void setUpSupermarketsAndCustomerWSClient() throws Exception {
 		futureMarket = getChoreography();
-		registerSupermarkets();
+		Service smregistry = customer.getServicesForRole("customer").get(0);
+		registerSupermarkets(smregistry);
 		customer = futureMarket.getServicesForRole("customer").get(0);
 		customerClient = customer.getWSClient();
 		customerClient.setEndpoint(formatEndpoint(customer.getWSDL()));

@@ -31,13 +31,14 @@ public class FutureMarketWorkflowTest {
 
 	@BeforeClass
 	public static void enactChoreography() throws Exception{
-		registerSupermarkets();
+		
 		futureMarket = getChoreography();
 		Service supermarket1 = futureMarket.getServicesForRole("supermarket").get(0);
 		smregistry = supermarket1.getServicesForRole("supermarket").get(0);
 		Service customer = futureMarket.getServicesForRole("customer").get(0);
 		customerClient = customer.getWSClient();
 		customerClient.setEndpoint(formatEndpoint(customer.getWSDL()));
+		registerSupermarkets(smregistry);
 	}
 	
 	
@@ -50,7 +51,6 @@ public class FutureMarketWorkflowTest {
 
 	@Test
 	public void shouldRegistrySupermarkets() throws Exception {
-		registerSupermarkets();
 		WSClient smRegistryClient = smregistry.getWSClient();
 		smRegistryClient.setEndpoint(smregistry.getWSDL());
 		
