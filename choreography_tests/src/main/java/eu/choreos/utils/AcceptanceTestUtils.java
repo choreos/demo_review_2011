@@ -12,8 +12,8 @@ import eu.choreos.vv.clientgenerator.WSClient;
 
 public class AcceptanceTestUtils {
 
-	final static private String IP = "choreos.ime.usp.br";
-	final static public String PREFIX = "http://" + IP + ":53124/petals/services/";
+	final static public String PREFIX = ":8084/petals/services/";
+	
 	
 	private static Choreography futureMarket = getChoreography();
 	private static List<Service> supermarkets = futureMarket.getServicesForRole("supermarket");
@@ -29,6 +29,7 @@ public class AcceptanceTestUtils {
 	}
 
 	public static void registerSupermarkets() throws Exception {
+		
 		for (Service service : supermarkets) {
 			String wsdl = service.getWSDL();
 			WSClient serviceClient = new WSClient(wsdl);

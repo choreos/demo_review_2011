@@ -26,9 +26,12 @@ public class FutureMarketWorkflowTest {
 	private static Choreography futureMarket;
 	private static Service smregistry;
 	private static WSClient customerClient;
+	private static String purchaseID;
+	private static String shipperName;
 
 	@BeforeClass
-	public static void enactChoreography(){
+	public static void enactChoreography() throws Exception{
+		registerSupermarkets();
 		futureMarket = getChoreography();
 		Service supermarket1 = futureMarket.getServicesForRole("supermarket").get(0);
 		smregistry = supermarket1.getServicesForRole("supermarket").get(0);
@@ -43,8 +46,7 @@ public class FutureMarketWorkflowTest {
 		removeSupermarkets(smregistry);
 	}
 
-	private String purchaseID;
-	private String shipperName;
+	
 
 	@Test
 	public void shouldRegistrySupermarkets() throws Exception {
