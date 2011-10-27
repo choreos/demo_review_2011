@@ -12,8 +12,8 @@ import eu.choreos.vv.clientgenerator.WSClient;
 
 public class AcceptanceTestUtils {
 
-	final static private String IP = "choreos.ime.usp.br";
-	final static public String PREFIX = "http://" + IP + ":53124/petals/services/";
+	final static private String IP = "ec2-107-22-19-7.compute-1.amazonaws.com";
+	final static public String PREFIX = "http://" + IP + ":8084/petals/services/";
 	
 	private static Choreography futureMarket = getChoreography();
 	private static List<Service> supermarkets = futureMarket.getServicesForRole("supermarket");

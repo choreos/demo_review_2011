@@ -55,7 +55,7 @@ public class ManualEnactment {
 		// ------------------------------------------------------------------------------------------------------------------------------------------
 		futureMarket.addService(supermarket1,"supermarket");
 		futureMarket.addService(supermarket2,"supermarket");
-		futureMarket.addService(supermarket3,"supermarket");
+		//futureMarket.addService(supermarket3,"supermarket");
 		futureMarket.addService(shipper1, "shipper");
 		futureMarket.addService(customer1, "customer");
 		

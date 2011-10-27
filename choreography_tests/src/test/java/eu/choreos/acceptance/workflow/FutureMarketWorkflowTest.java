@@ -26,6 +26,8 @@ public class FutureMarketWorkflowTest {
 	private static Choreography futureMarket;
 	private static Service smregistry;
 	private static WSClient customerClient;
+	private static String purchaseID;
+	private static String shipperName;
 
 	@BeforeClass
 	public static void enactChoreography(){
@@ -42,9 +44,6 @@ public class FutureMarketWorkflowTest {
 	public static void removeRegisteredSupermarkets() throws Exception {
 		removeSupermarkets(smregistry);
 	}
-
-	private String purchaseID;
-	private String shipperName;
 
 	@Test
 	public void shouldRegistrySupermarkets() throws Exception {
