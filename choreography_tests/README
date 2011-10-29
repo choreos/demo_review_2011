@@ -1,6 +1,6 @@
 configuration
 --------------------------------------------------------------
-in the class eu.choreos.utils.AcceptanceUtils, the variable 
+in the class eu.choreos.utils.AcceptanceTestUtils, the variable 
 IP must be filled with the machine IP where the customer service
 is deployed
 
@@ -16,8 +16,8 @@ execution
 ---------------------------------------------------------------
 Maven: 
 - run all tests: mvn test
-- run compliance tests: mvn -Dtest=eu.choreos.compliance.* test 
-- run acceptance tests: mvn -Dtest=eu.choreos.acceptance.* test
+- run compliance tests: mvn -Dtest=eu.choreos.compliance.* test
+- run acceptance tests: mvn -Dtest=eu.choreos.acceptance.workflow.* test
 
 Eclipse: 
 - run using JUnit but after please remove the lib javaee-api-6.0.jar from the referenced libraries (if it is present) 
