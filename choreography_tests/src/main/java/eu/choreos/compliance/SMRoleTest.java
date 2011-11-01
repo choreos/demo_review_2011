@@ -1,7 +1,7 @@
 package eu.choreos.compliance;
 
 import static eu.choreos.utils.AcceptanceTestUtils.formatEndpoint;
-import static eu.choreos.utils.ManualEnactment.getChoreography;
+import static eu.choreos.utils.ChoreographyAbstractor.getChoreography;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;

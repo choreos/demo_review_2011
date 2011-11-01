@@ -1,6 +1,6 @@
 package eu.choreos.compliance;
 
-import static eu.choreos.utils.ManualEnactment.getChoreography;
+import static eu.choreos.utils.ChoreographyAbstractor.getChoreography;
 import static eu.choreos.vv.assertions.RehearsalAsserts.assertRole;
 
 import java.util.List;

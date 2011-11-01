@@ -1,6 +1,6 @@
 package eu.choreos.utils;
 
-import static eu.choreos.utils.ManualEnactment.getChoreography;
+import static eu.choreos.utils.ChoreographyAbstractor.getChoreography;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import eu.choreos.vv.clientgenerator.WSClient;
 
 public class AcceptanceTestUtils {
 
-	final static private String IP = "ec2-107-22-19-7.compute-1.amazonaws.com";
+	final static private String IP = "opencirrus-08006.hpl.hp.com";
 	final static public String PREFIX = "http://" + IP + ":8084/petals/services/";
 	
 	private static Choreography futureMarket = getChoreography();

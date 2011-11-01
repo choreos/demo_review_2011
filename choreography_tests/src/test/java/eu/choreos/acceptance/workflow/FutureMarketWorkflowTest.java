@@ -4,7 +4,7 @@ import static eu.choreos.utils.AcceptanceTestUtils.formatEndpoint;
 import static eu.choreos.utils.AcceptanceTestUtils.getPersonalData;
 import static eu.choreos.utils.AcceptanceTestUtils.registerSupermarkets;
 import static eu.choreos.utils.AcceptanceTestUtils.removeSupermarkets;
-import static eu.choreos.utils.ManualEnactment.getChoreography;
+import static eu.choreos.utils.ChoreographyAbstractor.getChoreography;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
