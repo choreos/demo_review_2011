@@ -46,14 +46,14 @@ public class FutureMarketWorkflowTest {
 	}
 
 	@Test
-	public void shouldRegistrySupermarkets() throws Exception {
+	public void shouldRegisterSupermarkets() throws Exception {
 		registerSupermarkets();
 		WSClient smRegistryClient = smregistry.getWSClient();
 		smRegistryClient.setEndpoint(smregistry.getWSDL());
 		
 		Item response = smRegistryClient.request("getList", (Item) null);
 		List<Item> list = response.getChildAsList("return");
-		checkIfEndpointsExists(list);
+		validateEndpoints(list);
 	}
 	
 	
@@ -117,7 +117,7 @@ public class FutureMarketWorkflowTest {
 
 	
 	
-	private void checkIfEndpointsExists(List<Item> list) {
+	private void validateEndpoints(List<Item> list) {
 		List<Service> supermarkets = futureMarket.getServicesForRole("supermarket");
 		
 		for (Service service : supermarkets) {

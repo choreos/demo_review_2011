@@ -13,6 +13,7 @@ import eu.choreos.vv.clientgenerator.WSClient;
 public class AcceptanceTestUtils {
 
 	final static private String IP = "opencirrus-08006.hpl.hp.com";
+	//final static private String IP = "localhost";
 	final static public String PREFIX = "http://" + IP + ":8084/petals/services/";
 	
 	private static Choreography futureMarket = getChoreography();
